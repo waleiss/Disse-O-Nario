@@ -16,27 +16,28 @@
 </head>
 <body>
     <div class="image-container">
-        <img class="half-image-left" src="{% static 'img/sala3.png' %}">
-        <img class="half-image-right" src="{% static 'img/scrollcopy.png' %}">
+        <img class="half-image-left" src="{% static 'img/sala.png' %}">
+        <img class="half-image-right" src="{% static 'img/scroll.png' %}">
         <div class="text-overlay">
             <div class="col-9 search-div"> 
                 <form method="GET">
                     <div class="input-group">
                         <input class="form-control" name="search" type="search" placeholder="Diga a palavra que quer saber o significado" value="{{request.GET.search}}">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit">
+                            <button class="btn btn-secondary" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
                 </form>
             </div>
-                
+             {% if tem_pesquisa %}   
             <br>
             <p> <strong>Palavra</strong>: {{request.GET.search}} </p>
-            <p><strong>Significado</strong>: {% if word.meaning %}{{ word.meaning }}{% else %}(sem informações){% endif %}</p>
-            <p><strong>Sinônimos</strong>: {% if word.synonyms %}{{ word.synonyms|join:", " }}{% else %}(sem informações){% endif %}</p>
-            <p><strong>Frases</strong>: {% if word.examples %}{{ word.examples|join:".<br>" }}{% else %}(sem informações){% endif %}</p>
+            <p><strong>Significado</strong>: {% if word.meaning %}{{ word.meaning }}{% else %}(Nenhum significado encontrado){% endif %}</p>
+            <p><strong>Sinônimos</strong>: {% if word.synonyms %}{{ word.synonyms|join:", " }}{% else %}(Nenhum sinônimo encontrado){% endif %}</p>
+            <p><strong>Frases</strong>: {% if word.examples %}{{ word.examples|join:".<br>" }}{% else %}(Nenhuma frase de exemplo encontrada){% endif %}</p>
+            {% endif %}
         </div>
     </div>
 </body>

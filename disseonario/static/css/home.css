@@ -14,7 +14,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 45%;
+    width: 50%;
     height: 100%;
     object-fit: cover;
   }
@@ -22,7 +22,7 @@ html, body {
     position: fixed;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 57%;
     height: 100%;
     object-fit: cover;
   }
@@ -40,3 +40,6 @@ html, body {
     top: 12px;
     right: 26px;
   }
+  .form-control {
+    background-color: #fcf2e4; /* Substitua pelo código da cor desejada */
+}
